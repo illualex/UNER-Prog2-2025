@@ -1,0 +1,1 @@
+print("Trabajo Practico N°1 de Programación 2 - Facultad de Ciencias de la Administración (UNER)")

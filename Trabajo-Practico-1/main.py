@@ -3,12 +3,13 @@
 # Sección B - Ejercicios 1 al 10
 # Integrantes: 
 # - Alejo Paniagua
-# - 
+# - Sabrina Bidal
 # - 
 # =========================================
 
-# -- Importación para el ejercicio 7/8 descomentarlo despues
-# from impresiones import declarar_comida_favorita
+# Importación para el ejercicio 8
+from impresiones import declarar_comida_favorita
+
 
 
 # =========================================
@@ -40,7 +41,9 @@ def numeros_impares_juntos(entrada):
 # Ejercicio 4
 # =========================================
 def lista_elementos_en_comun(lista1, lista2):
-    pass
+    elementos_comunes = set(lista1) & set(lista2)
+    for elemento in elementos_comunes:
+        print(elemento)
 
 
 # =========================================
@@ -58,24 +61,12 @@ def persona_mayor_de_edad(edad):
 
 
 # =========================================
-# Ejercicio 7
-# =========================================
-def declarar_comida_favorita(nombre_persona, nombre_comida):
-    pass
-
-
-# =========================================
-# Ejercicio 8
-# =========================================
-def ejercicio_8():
-    pass
-
-
-# =========================================
 # Ejercicio 9
 # =========================================
 def cuenta_regresiva(entero_positivo):
-    pass
+    print(entero_positivo)
+    if entero_positivo > 0:
+        cuenta_regresiva(entero_positivo - 1)
 
 
 # =========================================
@@ -98,7 +89,6 @@ def menu():
         print("5. Ejercicio 5 - clave_valida()")
         print("6. Ejercicio 6 - persona_mayor_de_edad()")
         print("7. Ejercicio 7 - declarar_comida_favorita()")
-        print("8. Ejercicio 8 - ejercicio_8()")
         print("9. Ejercicio 9 - cuenta_regresiva()")
         print("10. Ejercicio 10 - simplificar_expresion()")
         print("0. Salir")
@@ -107,6 +97,7 @@ def menu():
 
         if opcion == "1":
             realizar_calculo()
+
 
         elif opcion == "2":
             print("\n<<<-- Ejercicio 2 -->>>")
@@ -118,6 +109,7 @@ def menu():
                 print("> Los dígitos NO están en orden ascendente")
             input("\nPresione Enter para continuar...")
 
+
         elif opcion == "3":
             print("\n<<<-- Ejercicio 3 -->>>")
             entrada = input("Ingrese números separados por comas (ej: 1,2,3 o 1, 2, 3): ")
@@ -127,11 +119,16 @@ def menu():
             print("> Números impares juntos:", resultado)
             input("\nPresione Enter para continuar...")
 
+
         elif opcion == "4":
+            lista1 = [1, 2, 3, 4, 5]
+            lista2 = [3, 4, 5, 6, 7]
             lista_elementos_en_comun(lista1, lista2)
+
 
         elif opcion == "5":
             clave_valida(clave)
+
 
         elif opcion == "6":
             print("\n<<<-- Ejercicio 6 -->>>")
@@ -142,17 +139,20 @@ def menu():
                 print("> No es mayor de edad")
             input("\nPresione Enter para continuar...")
 
-        elif opcion == "7":
-            declarar_comida_favorita(nombre_persona, nombre_comida)
 
-        elif opcion == "8":
-            ejercicio_8()
+        elif opcion == "7":
+            declarar_comida_favorita("Pablo", "pollo frito")
+            declarar_comida_favorita("Pedro", "canelones")
+            declarar_comida_favorita("Juan", "pizza")
+
 
         elif opcion == "9":
-            cuenta_regresiva(entero_positivo)
+            cuenta_regresiva(4)
+
 
         elif opcion == "10":
             simplificar_expresion(a, b)
+
 
         elif opcion == "0":
             print("Finalizando el programa...")

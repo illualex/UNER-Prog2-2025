@@ -121,9 +121,11 @@ def menu():
 
 
         elif opcion == "4":
+            print("\n<<<-- Ejercicio 4 -->>>")
             lista1 = [1, 2, 3, 4, 5]
             lista2 = [3, 4, 5, 6, 7]
             lista_elementos_en_comun(lista1, lista2)
+            input("\nPresione Enter para continuar...")
 
 
         elif opcion == "5":
@@ -141,13 +143,17 @@ def menu():
 
 
         elif opcion == "7":
+            print("\n<<<-- Ejercicio 7 -->>>")
             declarar_comida_favorita("Pablo", "pollo frito")
             declarar_comida_favorita("Pedro", "canelones")
             declarar_comida_favorita("Juan", "pizza")
+            input("\nPresione Enter para continuar...")
 
 
         elif opcion == "9":
+            print("\n<<<-- Ejercicio 9 -->>>")
             cuenta_regresiva(4)
+            input("\nPresione Enter para continuar...")
 
 
         elif opcion == "10":

@@ -1,22 +1,61 @@
 # =========================================
 # Trabajo Práctico n°1 - Programación 2
 # Sección B - Ejercicios 1 al 10
-# Integrantes: 
+# Integrantes:
 # - Alejo Paniagua
 # - Sabrina Bidal
-# - 
+# - Francisco Diaz
 # =========================================
 
 # Importación para el ejercicio 8
 from impresiones import declarar_comida_favorita
 
 
-
 # =========================================
 # Ejercicio 1
 # =========================================
 def realizar_calculo():
-    pass
+    while True:
+        print("\n<<<-- Ejercicio 1 -->>>")
+        print("Operaciones:")
+        print("1. Sumar")
+        print("2. Restar")
+        print("3. Multiplicar")
+        print("4. Dividir")
+        print("5. Salir")
+
+        opcion = input("\n> Seleccione una opción: ")
+
+        if opcion == "5":
+            print("Saliendo del ejercicio 1...")
+            break
+
+        if opcion in ["1", "2", "3", "4"]:
+            numero1 = int(input("\nIngrese el primer número: "))
+            numero2 = int(input("Ingrese el segundo número: "))
+
+            if opcion == "1":
+                resultado = numero1 + numero2
+                print(f"> El resultado de la suma es: {resultado}")
+
+            elif opcion == "2":
+                resultado = numero1 - numero2
+                print(f"> El resultado de la resta es: {resultado}")
+
+            elif opcion == "3":
+                resultado = numero1 * numero2
+                print(f"> El resultado de la multiplicación es: {resultado}")
+
+            elif opcion == "4":
+                if numero2 != 0:
+                    resultado = numero1 / numero2
+                    print(f"> El resultado de la división es: {resultado}")
+                else:
+                    print("> Error: No se puede dividir por cero")
+        else:
+            print("> Opción no válida, intente de nuevo.")
+
+        input("\nPresione Enter para continuar...")
 
 
 # =========================================
@@ -49,8 +88,17 @@ def lista_elementos_en_comun(lista1, lista2):
 # =========================================
 # Ejercicio 5
 # =========================================
-def clave_valida(clave):
-    pass
+def clave_valida(clave: str) -> bool:
+    if not (6 <= len(clave) <= 20):
+        return False
+
+    if not any(c.isdigit() for c in clave):
+        return False
+
+    if " " in clave:
+        return False
+
+    return True
 
 
 # =========================================
@@ -73,7 +121,7 @@ def cuenta_regresiva(entero_positivo):
 # Ejercicio 10
 # =========================================
 def simplificar_expresion(a, b):
-    pass
+    return True
 
 
 # =========================================
@@ -98,27 +146,28 @@ def menu():
         if opcion == "1":
             realizar_calculo()
 
-
         elif opcion == "2":
             print("\n<<<-- Ejercicio 2 -->>>")
             entrada = input("Ingrese varios números (ej: 12345 o 1 2 3 4 5): ")
-            numero = int(entrada.replace(" ", "")) 
+            numero = int(entrada.replace(" ", ""))
             if numero_en_orden_ascendente(numero):
                 print("> Los dígitos están en orden ascendente")
             else:
                 print("> Los dígitos NO están en orden ascendente")
             input("\nPresione Enter para continuar...")
 
-
         elif opcion == "3":
             print("\n<<<-- Ejercicio 3 -->>>")
-            entrada = input("Ingrese números separados por comas (ej: 1,2,3 o 1, 2, 3): ")
+            entrada = input(
+                "Ingrese números separados por comas (ej: 1,2,3 o 1, 2, 3): "
+            )
             entrada = entrada.replace(" ", ",")
-            lista_numeros = [int(x.strip()) for x in entrada.split(",") if x.strip() != '']
+            lista_numeros = [
+                int(x.strip()) for x in entrada.split(",") if x.strip() != ""
+            ]
             resultado = numeros_impares_juntos(lista_numeros)
             print("> Números impares juntos:", resultado)
             input("\nPresione Enter para continuar...")
-
 
         elif opcion == "4":
             print("\n<<<-- Ejercicio 4 -->>>")
@@ -127,10 +176,20 @@ def menu():
             lista_elementos_en_comun(lista1, lista2)
             input("\nPresione Enter para continuar...")
 
-
         elif opcion == "5":
-            clave_valida(clave)
+            print("\n<<<-- Ejercicio 5 -->>>")
+            print("La clave debe cumplir con las siguientes condiciones:")
+            print("- Longitud entre 6 y 20 caracteres")
+            print("- Debe contener al menos un número")
+            print("- No puede contener espacios")
 
+            clave = input("\nIngrese su clave: ").strip()
+
+            if clave_valida(clave):
+                print(">> Clave válida")
+            else:
+                print("> Clave inválida")
+            input("\nPresione Enter para continuar...")
 
         elif opcion == "6":
             print("\n<<<-- Ejercicio 6 -->>>")
@@ -141,7 +200,6 @@ def menu():
                 print("> No es mayor de edad")
             input("\nPresione Enter para continuar...")
 
-
         elif opcion == "7":
             print("\n<<<-- Ejercicio 7 -->>>")
             declarar_comida_favorita("Pablo", "pollo frito")
@@ -149,16 +207,16 @@ def menu():
             declarar_comida_favorita("Juan", "pizza")
             input("\nPresione Enter para continuar...")
 
-
         elif opcion == "9":
             print("\n<<<-- Ejercicio 9 -->>>")
             cuenta_regresiva(4)
             input("\nPresione Enter para continuar...")
 
-
         elif opcion == "10":
-            simplificar_expresion(a, b)
-
+            print("\n<<<-- Ejercicio 10 -->>>")
+            print("La expresión (a and b) or True se simplifica a:")
+            print(simplificar_expresion(None, None))
+            input("\nPresione Enter para continuar...")
 
         elif opcion == "0":
             print("Finalizando el programa...")

@@ -10,6 +10,8 @@
 # Importación para el ejercicio 1
 from cancion import Cancion
 
+# Importación para el ejercicio 5
+from circulo import Circulo
 
 # =========================================
 # Ejercicio 2
@@ -18,11 +20,13 @@ cancion1 = Cancion("Imagine", 183, "Pop")
 cancion2 = Cancion("Bohemian Rhapsody", 354, "Rock")
 cancion3 = Cancion("Billie Jean", 294, "Pop")
 
+
 def ejercicio_2():
     print("Se crearon las siguientes canciones:")
     print("-", cancion1.obtenerNombre())
     print("-", cancion2.obtenerNombre())
     print("-", cancion3.obtenerNombre())
+    input("\nPresione Enter para continuar...")
 
 
 # =========================================
@@ -33,9 +37,37 @@ def ejercicio_3():
     print(f"- {cancion1.obtenerNombre()}: {cancion1.obtenerGenero()}")
     print(f"- {cancion2.obtenerNombre()}: {cancion2.obtenerGenero()}")
     print(f"- {cancion3.obtenerNombre()}: {cancion3.obtenerGenero()}")
+    input("\nPresione Enter para continuar...")
 
 
+# =========================================
+# Ejercicio 4
+# =========================================
+def ejercicio_4():
+    print("Antes de modificar:")
+    print(f"- {cancion1.obtenerNombre()}: {cancion1.obtenerGenero()}")
 
+    cancion1.establecerGenero("Rock")
+
+    print("\nDespués de modificar:")
+    print(f"- {cancion1.obtenerNombre()}: {cancion1.obtenerGenero()}")
+    input("\nPresione Enter para continuar...")
+
+
+# =========================================
+# Ejercicio 6
+# =========================================
+circulo1 = Circulo(3)
+circulo2 = Circulo(5.5)
+circulo3 = Circulo(10)
+
+
+def ejercicio_6():
+    print("Se crearon 3 círculos con radios:")
+    print("Círculo 1:", circulo1.obtenerRadio())
+    print("Círculo 2:", circulo2.obtenerRadio())
+    print("Círculo 3:", circulo3.obtenerRadio())
+    input("\nPresione Enter para continuar...")
 
 
 # =========================================
@@ -46,9 +78,8 @@ def menu():
         print("\n====== Menú de Ejercicios TP-N2 ======")
         print("2. Ejercicio 2 - Canciones")
         print("3. Ejercicio 3 - Género de las canciones")
-        print("4. Ejercicio 4 - ")
-        print("5. Ejercicio 5 - ")
-        print("6. Ejercicio 6 - ")
+        print("4. Ejercicio 4 - Modificar género de una canción")
+        print("6. Ejercicio 6 - 3 Círculos")
         print("7. Ejercicio 7 - ")
         print("9. Ejercicio 9 - ")
         print("10. Ejercicio 10 - ")
@@ -65,17 +96,16 @@ def menu():
             ejercicio_3()
 
         elif opcion == "4":
-            pass
-
-        elif opcion == "5":
-            pass
+            print("\n<<<-- Ejercicio 4 -->>>")
+            ejercicio_4()
 
         elif opcion == "6":
-            pass
+            print("\n<<<-- Ejercicio 6 -->>>")
+            ejercicio_6()
 
         elif opcion == "7":
             pass
-        
+
         elif opcion == "8":
             pass
 

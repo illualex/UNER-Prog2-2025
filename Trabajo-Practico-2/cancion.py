@@ -4,7 +4,7 @@
 class Cancion:
     def __init__(self, nombre: str, duracion: int, genero: str):
         self.nombre = nombre
-        self.duracion = duracion 
+        self.duracion = duracion
         self.genero = genero
 
     def establecerNombre(self, nombre: str):

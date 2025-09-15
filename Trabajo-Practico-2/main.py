@@ -69,6 +69,53 @@ def ejercicio_6():
     print("Círculo 3:", circulo3.obtenerRadio())
     input("\nPresione Enter para continuar...")
 
+# =========================================
+# Ejercicio 7
+# =========================================
+def ejercicio_7():
+    print("Diámetro de los círculos:")
+    print("Círculo 1:", circulo1.obtenerDiametro())
+    print("Círculo 2:", circulo2.obtenerDiametro())
+    print("Círculo 3:", circulo3.obtenerDiametro())
+    input("\nPresione Enter para continuar...")
+
+
+# =========================================
+# Ejercicio 8
+# =========================================
+def ejercicio_8():
+    print("Valor de PI para cada círculo:")
+    print("Círculo 1:", circulo1.PI)
+    print("Círculo 2:", circulo2.PI)
+    print("Círculo 3:", circulo3.PI)
+    input("\nPresione Enter para continuar...")
+
+
+# =========================================
+# Ejercicio 9
+# =========================================
+def ejercicio_9():
+    circulo4 = Circulo(7)
+    circulo5 = Circulo(7)
+
+    print("Comparación de dos círculos con radio 7 usando == :")
+    print("¿Son iguales? ->", circulo4 == circulo5)
+    input("\nPresione Enter para continuar...")
+
+
+# =========================================
+# Ejercicio 10
+# =========================================
+def ejercicio_10():
+    circulo4 = Circulo(7)
+    circulo5 = Circulo(7)
+
+    print("Comparación de perímetros de círculos con radio 7:")
+    print("Perímetro Círculo 4:", circulo4.obtenerPerimetro())
+    print("Perímetro Círculo 5:", circulo5.obtenerPerimetro())
+    print("¿Perímetros iguales? ->", circulo4.obtenerPerimetro() == circulo5.obtenerPerimetro())
+    input("\nPresione Enter para continuar...")
+
 
 # =========================================
 # Menú principal
@@ -80,9 +127,10 @@ def menu():
         print("3. Ejercicio 3 - Género de las canciones")
         print("4. Ejercicio 4 - Modificar género de una canción")
         print("6. Ejercicio 6 - 3 Círculos")
-        print("7. Ejercicio 7 - ")
-        print("9. Ejercicio 9 - ")
-        print("10. Ejercicio 10 - ")
+        print("7. Ejercicio 7 - Valor del diametro")
+        print("8. Ejercicio 8 - Valor de PI")
+        print("9. Ejercicio 9 - Comparacion")
+        print("10. Ejercicio 10 - Valor de perimetro ")
         print("0. Salir")
 
         opcion = input("\n> Seleccione una opción: ")
@@ -104,17 +152,17 @@ def menu():
             ejercicio_6()
 
         elif opcion == "7":
-            pass
-
+            print("\n<<<-- Ejercicio 7 -->>>")
+            ejercicio_7()
         elif opcion == "8":
-            pass
-
+            print("\n<<<-- Ejercicio 8 -->>>")
+            ejercicio_8()
         elif opcion == "9":
-            pass
-
+            print("\n<<<-- Ejercicio 9 -->>>")
+            ejercicio_9()
         elif opcion == "10":
-            pass
-
+            print("\n<<<-- Ejercicio 10 -->>>")
+            ejercicio_10()
         elif opcion == "0":
             print("Finalizando el programa...")
             break

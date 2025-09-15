@@ -69,14 +69,15 @@ def ejercicio_6():
     print("Círculo 3:", circulo3.obtenerRadio())
     input("\nPresione Enter para continuar...")
 
+
 # =========================================
 # Ejercicio 7
 # =========================================
 def ejercicio_7():
     print("Diámetro de los círculos:")
-    print("Círculo 1:", circulo1.obtenerDiametro())
-    print("Círculo 2:", circulo2.obtenerDiametro())
-    print("Círculo 3:", circulo3.obtenerDiametro())
+    print("Círculo 1:", circulo1.obtenerDiametro(), "cm")
+    print("Círculo 2:", circulo2.obtenerDiametro(), "cm")
+    print("Círculo 3:", circulo3.obtenerDiametro(), "cm")
     input("\nPresione Enter para continuar...")
 
 
@@ -111,9 +112,12 @@ def ejercicio_10():
     circulo5 = Circulo(7)
 
     print("Comparación de perímetros de círculos con radio 7:")
-    print("Perímetro Círculo 4:", circulo4.obtenerPerimetro())
-    print("Perímetro Círculo 5:", circulo5.obtenerPerimetro())
-    print("¿Perímetros iguales? ->", circulo4.obtenerPerimetro() == circulo5.obtenerPerimetro())
+    print("Perímetro Círculo 4:", circulo4.obtenerPerimetro(), "cm")
+    print("Perímetro Círculo 5:", circulo5.obtenerPerimetro(), "cm")
+    print(
+        "¿Perímetros iguales? ->",
+        circulo4.obtenerPerimetro() == circulo5.obtenerPerimetro(),
+    )
     input("\nPresione Enter para continuar...")
 
 

@@ -10,47 +10,47 @@ class Empleado:
 
     # Constructor
     def __init__(self, nombres: str, apellidos: str):
-        self.numeroLegajo = None
-        self.nombres = nombres
-        self.apellidos = apellidos
+        self.__numeroLegajo = None
+        self.__nombres = nombres
+        self.__apellidos = apellidos
         # --- Ejercicio 3B ---
-        self.estado = Empleado.ESTADO_ALTA
+        self.__estado = Empleado.ESTADO_ALTA
 
     # Comandos (setters)
     def establecerNumeroLegajo(self, numero: int):
-        self.numeroLegajo = numero
+        self.__numeroLegajo = numero
 
     def establecerNombres(self, nombres: str):
-        self.nombres = nombres
+        self.__nombres = nombres
 
     def establecerApellidos(self, apellidos: str):
-        self.apellidos = apellidos
+        self.__apellidos = apellidos
 
     def establecerEstado(self, estado: int):
-        self.estado = estado
+        self.__estado = estado
 
     # Consultas (getters)
     def obtenerNumeroLegajo(self) -> int:
-        return self.numeroLegajo
+        return self.__numeroLegajo
 
     def obtenerNombres(self) -> str:
-        return self.nombres
+        return self.__nombres
 
     def obtenerApellidos(self) -> str:
-        return self.apellidos
+        return self.__apellidos
 
     def obtenerEstado(self) -> int:
-        return self.estado
+        return self.__estado
 
     def bajaEmpleado(self):
         """Cambia el estado del empleado a BAJA."""
-        self.estado = Empleado.ESTADO_BAJA
+        self.__estado = Empleado.ESTADO_BAJA
 
     def __str__(self):
-        estado_str = "Alta" if self.estado == Empleado.ESTADO_ALTA else "Baja"
-        return f"Legajo: {self.numeroLegajo}, Nombre: {self.nombres} {self.apellidos}, Estado: {estado_str}"
+        estado_str = "Alta" if self.__estado == Empleado.ESTADO_ALTA else "Baja"
+        return f"Legajo: {self.__numeroLegajo}, Nombre: {self.__nombres} {self.__apellidos}, Estado: {estado_str}"
 
     def __eq__(self, other):
         if isinstance(other, Empleado):
-            return self.numeroLegajo == other.numeroLegajo
+            return self.__numeroLegajo == other.__numeroLegajo
         return False

@@ -9,3 +9,6 @@ class Producto:
 
     def obtenerNombre(self) -> str:
         return self.__nombre
+    
+    def __str__(self):
+        return self.__nombre

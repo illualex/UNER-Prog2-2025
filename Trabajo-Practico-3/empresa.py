@@ -12,6 +12,13 @@ class Empresa:
         self.__productos = []
         self.__empleados = []
 
+    # --- Ejercicio 5 ---
+    def __obtenerMaximoLegajo(self) -> int:
+        if not self.__empleados:
+            return 0
+        legajos_validos = [e.obtenerNumeroLegajo() for e in self.__empleados if e.obtenerNumeroLegajo() is not None]
+        return max(legajos_validos) if legajos_validos else 0
+
     def establecerRazonSocial(self, razon_social):
         self.__razon_social = razon_social
 
@@ -21,7 +28,11 @@ class Empresa:
     def removerProducto(self, producto: Producto):
         self.__productos.remove(producto)
 
+    # --- Ejercicio 5 ---
     def altaEmpleado(self, empleado: Empleado):
+        maximo_legajo_actual = self.__obtenerMaximoLegajo()
+        nuevo_legajo = maximo_legajo_actual + 1
+        empleado.establecerNumeroLegajo(nuevo_legajo)
         self.__empleados.append(empleado)
 
     def bajaEmpleado(self, empleado: Empleado):

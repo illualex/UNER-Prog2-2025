@@ -1,4 +1,7 @@
-# empleado.py
+# =========================================
+# Ejercicio 2 y 3
+# =========================================
+
 
 class Empleado:
     # Atributos de clase
@@ -10,6 +13,7 @@ class Empleado:
         self.numeroLegajo = None
         self.nombres = nombres
         self.apellidos = apellidos
+        # --- Ejercicio 3B ---
         self.estado = Empleado.ESTADO_ALTA
 
     # Comandos (setters)
@@ -37,14 +41,16 @@ class Empleado:
 
     def obtenerEstado(self) -> int:
         return self.estado
+
     def bajaEmpleado(self):
         """Cambia el estado del empleado a BAJA."""
         self.estado = Empleado.ESTADO_BAJA
+
     def __str__(self):
         estado_str = "Alta" if self.estado == Empleado.ESTADO_ALTA else "Baja"
         return f"Legajo: {self.numeroLegajo}, Nombre: {self.nombres} {self.apellidos}, Estado: {estado_str}"
 
     def __eq__(self, other):
         if isinstance(other, Empleado):
-          return self.numeroLegajo == other.numeroLegajo
+            return self.numeroLegajo == other.numeroLegajo
         return False

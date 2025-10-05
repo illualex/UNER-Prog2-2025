@@ -1,5 +1,5 @@
 # =========================================
-# Ejercicio 4
+# Ejercicio 4 y 7
 # =========================================
 
 from producto import Producto
@@ -12,39 +12,41 @@ class Empresa:
         self.__productos = []
         self.__empleados = []
 
-    def establecer_razon_social(self, razon_social):
+    def establecerRazonSocial(self, razon_social):
         self.__razon_social = razon_social
 
-    def agregar_producto(self, producto: Producto):
+    def agregarProducto(self, producto: Producto):
         self.__productos.append(producto)
 
-    def remover_producto(self, producto: Producto):
+    def removerProducto(self, producto: Producto):
         self.__productos.remove(producto)
 
-    def alta_empleado(self, empleado: Empleado):
+    def altaEmpleado(self, empleado: Empleado):
         self.__empleados.append(empleado)
 
-    def baja_empleado(self, empleado: Empleado):
-        empleado.establecer_estado(Empleado.ESTADO_BAJA)
+    def bajaEmpleado(self, empleado: Empleado):
+        empleado.establecerEstado(Empleado.ESTADO_BAJA)
 
-    def obtener_razon_social(self) -> str:
+    def obtenerRazonSocial(self) -> str:
         return self.__razon_social
 
-    def obtener_productos(self) -> list:
+    def obtenerProductos(self) -> list:
         return self.__productos
 
-    def obtener_empleados_de_alta(self) -> list:
+    # --- Ejercicio 7B ---
+    def obtenerEmpleadosDeAlta(self) -> list:
         return [
-            e for e in self.__empleados if e.obtener_estado() == Empleado.ESTADO_ALTA
+            e for e in self.__empleados if e.obtenerEstado() == Empleado.ESTADO_ALTA
         ]
 
-    def obtener_empleados_historico(self) -> list:
+    # --- Ejercicio 7B ---
+    def obtenerEmpleadosHistorico(self) -> list:
         return self.__empleados
 
     def __str__(self):
         productos = ", ".join(str(p) for p in self.__productos) or "Sin productos"
         empleados = (
-            ", ".join(str(e) for e in self.obtener_empleados_de_alta())
+            ", ".join(str(e) for e in self.obtenerEmpleadosDeAlta())
             or "Sin empleados de alta"
         )
         return f"Empresa: {self.__razon_social}\nProductos: {productos}\nEmpleados de alta: {empleados}"

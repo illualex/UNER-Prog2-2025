@@ -53,7 +53,9 @@ class Empresa:
     # --- Ejercicio 7B ---
     def obtenerEmpleadosHistorico(self) -> list:
         return self.__empleados
-
+# =========================================
+# Ejercicio 8
+# =========================================
     def __str__(self):
         productos = ", ".join(str(p) for p in self.__productos) or "Sin productos"
         empleados = (
@@ -61,7 +63,9 @@ class Empresa:
             or "Sin empleados de alta"
         )
         return f"Empresa: {self.__razon_social}\nProductos: {productos}\nEmpleados de alta: {empleados}"
-
+# =========================================
+# Ejercicio 8
+# =========================================
     def __eq__(self, other):
         if isinstance(other, Empresa):
             return other.__razon_social == self.__razon_social

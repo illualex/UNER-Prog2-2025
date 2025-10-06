@@ -1,5 +1,5 @@
 # =========================================
-# Ejercicio 4 y 7
+# Ejercicio 4, 5, 6, 7 y 8
 # =========================================
 
 from producto import Producto
@@ -16,7 +16,11 @@ class Empresa:
     def __obtenerMaximoLegajo(self) -> int:
         if not self.__empleados:
             return 0
-        legajos_validos = [e.obtenerNumeroLegajo() for e in self.__empleados if e.obtenerNumeroLegajo() is not None]
+        legajos_validos = [
+            e.obtenerNumeroLegajo()
+            for e in self.__empleados
+            if e.obtenerNumeroLegajo() is not None
+        ]
         return max(legajos_validos) if legajos_validos else 0
 
     def establecerRazonSocial(self, razon_social):
@@ -35,6 +39,7 @@ class Empresa:
         empleado.establecerNumeroLegajo(nuevo_legajo)
         self.__empleados.append(empleado)
 
+    # --- Ejercicio 6 ---
     def bajaEmpleado(self, empleado: Empleado):
         empleado.establecerEstado(Empleado.ESTADO_BAJA)
 
@@ -44,29 +49,32 @@ class Empresa:
     def obtenerProductos(self) -> list:
         return self.__productos
 
-    # --- Ejercicio 7B ---
+    # --- Ejercicio 7 ---
     def obtenerEmpleadosDeAlta(self) -> list:
         return [
             e for e in self.__empleados if e.obtenerEstado() == Empleado.ESTADO_ALTA
         ]
 
-    # --- Ejercicio 7B ---
-    def obtenerEmpleadosHistorico(self) -> list:
+    # --- Ejercicio 7 ---
+    def obtenerEmpleadoHistorico(self) -> list:
+        """Retorna todos los empleados sin importar su estado actual."""
         return self.__empleados
-# =========================================
-# Ejercicio 8
-# =========================================
+
+    # --- Ejercicio 8 ---
     def __str__(self):
         productos = ", ".join(str(p) for p in self.__productos) or "Sin productos"
         empleados = (
             ", ".join(str(e) for e in self.obtenerEmpleadosDeAlta())
             or "Sin empleados de alta"
         )
-        return f"Empresa: {self.__razon_social}\nProductos: {productos}\nEmpleados de alta: {empleados}"
-# =========================================
-# Ejercicio 8
-# =========================================
+        return (
+            f"Empresa: {self.__razon_social}\n"
+            f"Productos: {productos}\n"
+            f"Empleados de alta: {empleados}"
+        )
+
+    # --- Ejercicio 8 ---
     def __eq__(self, other):
         if isinstance(other, Empresa):
-            return other.__razon_social == self.__razon_social
-        return NotImplemented
+            return self.__razon_social == other.__razon_social
+        return False

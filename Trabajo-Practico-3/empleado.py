@@ -1,22 +1,20 @@
 # =========================================
-# Ejercicio 2 y 3
+# Ejercicio 2, 3, 6 y 8
 # =========================================
 
 
 class Empleado:
-    # Atributos de clase
     ESTADO_ALTA = 1
     ESTADO_BAJA = 2
 
-    # Constructor
     def __init__(self, nombres: str, apellidos: str):
         self.__numeroLegajo = None
         self.__nombres = nombres
         self.__apellidos = apellidos
-        # --- Ejercicio 3B ---
+
+        # --- Ejercicio 3 ---
         self.__estado = Empleado.ESTADO_ALTA
 
-    # Comandos (setters)
     def establecerNumeroLegajo(self, numero: int):
         self.__numeroLegajo = numero
 
@@ -29,7 +27,6 @@ class Empleado:
     def establecerEstado(self, estado: int):
         self.__estado = estado
 
-    # Consultas (getters)
     def obtenerNumeroLegajo(self) -> int:
         return self.__numeroLegajo
 
@@ -42,14 +39,16 @@ class Empleado:
     def obtenerEstado(self) -> int:
         return self.__estado
 
+    # --- Ejercicio 6 ---
     def bajaEmpleado(self):
-        """Cambia el estado del empleado a BAJA."""
         self.__estado = Empleado.ESTADO_BAJA
 
+    # --- Ejercicio 8 ---
     def __str__(self):
         estado_str = "Alta" if self.__estado == Empleado.ESTADO_ALTA else "Baja"
         return f"Legajo: {self.__numeroLegajo}, Nombre: {self.__nombres} {self.__apellidos}, Estado: {estado_str}"
 
+    # --- Ejercicio 8 ---
     def __eq__(self, other):
         if isinstance(other, Empleado):
             return self.__numeroLegajo == other.__numeroLegajo

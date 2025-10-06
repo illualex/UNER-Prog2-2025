@@ -19,27 +19,27 @@ from empleado import Empleado
 def ejercicio_7():
     empresa = Empresa("Demo S.A.")
 
-    # Crear empleados
+    # -- Crear empleados --
     emp1 = Empleado("Juan", "Pérez")
     emp2 = Empleado("Ana", "García")
     emp3 = Empleado("Lucas", "Díaz")
 
-    # Dar de alta los empleados
+    # -- Dar de alta los empleados --
     empresa.altaEmpleado(emp1)
     empresa.altaEmpleado(emp2)
     empresa.altaEmpleado(emp3)
 
-    # Dar de baja a uno
+    # -- Dar de baja a uno --
     empresa.bajaEmpleado(emp2)
 
-    # Mostrar empleados de alta
+    # -- Mostrar empleados de alta --
     print("\nEmpleados de alta:")
-    for e in empresa.obtenerEmpleadosDeAlta():  # camelCase
+    for e in empresa.obtenerEmpleadosDeAlta():
         print(e)
 
-    # Mostrar empleados históricos
+    # -- Mostrar empleados históricos --
     print("\nEmpleados históricos:")
-    for e in empresa.obtenerEmpleadosHistorico():  # camelCase
+    for e in empresa.obtenerEmpleadoHistorico():
         print(e)
 
     input("\nPresione Enter para continuar...")
@@ -49,23 +49,23 @@ def ejercicio_7():
 # Ejercicio 10
 # =========================================
 def ejercicio_10():
-    # Crear dos empresas
+    # -- Crear dos empresas --
     empresa1 = Empresa("Tech Solutions S.A.")
     empresa2 = Empresa("EcoMarket SRL")
 
-    # Crear productos
+    # -- Crear productos --
     prod1 = Producto("Laptop")
     prod2 = Producto("Mouse")
     prod3 = Producto("Verduras orgánicas")
     prod4 = Producto("Frutas frescas")
 
-    # Agregar productos a cada empresa
+    # -- Agregar productos a cada empresa --
     empresa1.agregarProducto(prod1)
     empresa1.agregarProducto(prod2)
     empresa2.agregarProducto(prod3)
     empresa2.agregarProducto(prod4)
 
-    # Crear empleados
+    # -- Crear empleados --
     emp1 = Empleado("Juan", "Pérez")
     emp2 = Empleado("Ana", "García")
     emp3 = Empleado("Lucas", "Díaz")
@@ -73,7 +73,7 @@ def ejercicio_10():
     emp5 = Empleado("Marcos", "López")
     emp6 = Empleado("Lucía", "Fernández")
 
-    # Dar de alta los empleados en las empresas
+    # -- Dar de alta los empleados en las empresas --
     empresa1.altaEmpleado(emp1)
     empresa1.altaEmpleado(emp2)
     empresa1.altaEmpleado(emp3)
@@ -82,11 +82,11 @@ def ejercicio_10():
     empresa2.altaEmpleado(emp5)
     empresa2.altaEmpleado(emp6)
 
-    # Dar de baja a dos empleados de empresa1
+    # -- Dar de baja a dos empleados de empresa1 --
     empresa1.bajaEmpleado(emp2)
     empresa1.bajaEmpleado(emp3)
 
-    # Mostrar información de ambas empresas
+    # -- Mostrar información de ambas empresas --
     print("\n--- Información de las empresas ---\n")
     print(empresa1)
     print("\n-----------------------------\n")
@@ -114,7 +114,7 @@ def menu():
             print("\n<<<-- Ejercicio 10 -->>>")
             ejercicio_10()
         elif opcion == "0":
-            print("Saliendo del programa...")
+            print("\nSaliendo del programa...")
             break
         else:
             print("Opción no válida. Intente de nuevo.")

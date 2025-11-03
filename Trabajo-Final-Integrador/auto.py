@@ -33,3 +33,13 @@ class Auto(Vehiculo):
 
     def obtenerCaballosFuerza(self) -> int:
         return self.__caballosFuerza
+
+
+    # Ejercicio 5 - implementacion __str__
+    def __str__(self):
+        return (
+            f"Auto #{self.obtener_numero_id()} | Marca: {self.obtener_marca()} | Modelo: {self.obtener_modelo()} | "
+            f"Año: {self.obtener_anio()} | Sucursal ID: {self.obtener_sucursal_id()} | Estado ID: {self.obtener_estado_id()} | "
+            f"Airbags: {self.__airbags} | Frenos ABS: {'Sí' if self.__frenosAbs else 'No'} | "
+            f"Caballos de fuerza: {self.__caballosFuerza}"
+        )

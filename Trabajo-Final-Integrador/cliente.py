@@ -1,52 +1,52 @@
 # =========================================
-# Ejercicio 2 - generar la clase cliente.py
+# Ejercicio 2 - Clase Cliente
 # =========================================
 
 
 class Cliente:
-    # Constructor
-    def __init__(self, numeroId: int, nombres: str, apellidos: str, mail: str):
-        self.__numeroId = numeroId
+    # << Constructores >>
+    def __init__(self, numero_id: int, nombres: str, apellidos: str, email: str):
+        self.__numero_id = numero_id
         self.__nombres = nombres
         self.__apellidos = apellidos
-        self.__email = mail
-
-    # --- Comandos (modificadores) ---
-    def establecerNumeroId(self, numeroId: int):
-        self.__numeroId = numeroId
-
-    def establecerNombres(self, nombres: str):
-        self.__nombres = nombres
-
-    def establecerApellidos(self, apellidos: str):
-        self.__apellidos = apellidos
-
-    def establecerEmail(self, email: str):
         self.__email = email
 
-    # --- Consultas (getters) ---
-    def obtenerNumeroId(self) -> int:
-        return self.__numeroId
+    # << Comandos >>
+    def establecer_numero_id(self, numero_id: int):
+        self.__numero_id = numero_id
 
-    def obtenerNombres(self) -> str:
+    def establecer_nombres(self, nombres: str):
+        self.__nombres = nombres
+
+    def establecer_apellidos(self, apellidos: str):
+        self.__apellidos = apellidos
+
+    def establecer_email(self, email: str):
+        self.__email = email
+
+    # << Consultas >>
+    def obtener_numero_id(self) -> int:
+        return self.__numero_id
+
+    def obtener_nombres(self) -> str:
         return self.__nombres
 
-    def obtenerApellidos(self) -> str:
+    def obtener_apellidos(self) -> str:
         return self.__apellidos
 
-    def obtenerEmail(self) -> str:
+    def obtener_email(self) -> str:
         return self.__email
 
-
-    # Ejercicio 5 - implementacion __str__ y __eq__
+    # >> Ejercicio 5 - __eq__ <<
     def __eq__(self, other):
         if isinstance(other, Cliente):
-            return self.__numeroId == other.__numeroId
+            return self.__numero_id == other.__numero_id
         return False
 
+    # >> Ejercicio 5 - __str__ <<
     def __str__(self):
         return (
-            f"Cliente #{self.__numeroId} | "
+            f"Cliente #{self.__numero_id} | "
             f"Nombre: {self.__nombres} {self.__apellidos} | "
             f"Email: {self.__email}"
         )

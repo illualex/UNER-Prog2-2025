@@ -1,45 +1,63 @@
-# auto.py
+# =========================================
+# Ejercicio 3 - Clase Auto
+# =========================================
 
-from vehiculo import Vehiculo 
+# Importación de la clase Vehículo
+from vehiculo import Vehiculo
+
 
 class Auto(Vehiculo):
-    # Constructor
-    def __init__(self, numeroId: int, marca: str, modelo: str, anio: str,
-                 sucursalId: int, estadoId: int,
-                 airbags: int, frenosAbs: bool, caballosFuerza: int):
-        # Llamada al constructor de la clase base Vehiculo
-        super().__init__(numeroId, marca, modelo, anio, sucursalId, estadoId)
-        # Atributos propios de Auto
+    # << Atributos de Instancia >>
+    def __init__(
+        self,
+        numero_id: int,
+        marca: str,
+        modelo: str,
+        anio: str,
+        sucursal_id: int,
+        estado_id: int,
+        airbags: int,
+        frenos_abs: bool,
+        caballos_fuerza: int,
+    ):
+        # << Constructores >>
+        super().__init__(numero_id, marca, modelo, anio, sucursal_id, estado_id)
         self.__airbags = airbags
-        self.__frenosAbs = frenosAbs
-        self.__caballosFuerza = caballosFuerza
+        self.__frenos_abs = frenos_abs
+        self.__caballos_fuerza = caballos_fuerza
 
-    # --- Comandos ---
-    def establecerAirbags(self, airbags: int):
+    # << Comandos >>
+    def establecer_airbags(self, airbags: int):
         self.__airbags = airbags
 
-    def establecerFrenosAbs(self, frenosAbs: bool):
-        self.__frenosAbs = frenosAbs
+    def establecer_frenos_abs(self, frenos_abs: bool):
+        self.__frenos_abs = frenos_abs
 
-    def establecerCaballosFuerza(self, caballosFuerza: int):
-        self.__caballosFuerza = caballosFuerza
+    def establecer_caballos_fuerza(self, caballos_fuerza: int):
+        self.__caballos_fuerza = caballos_fuerza
 
-    # --- Consultas---
-    def obtenerAirbags(self) -> int:
+    # << Consultas >>
+    def obtener_airbags(self) -> int:
         return self.__airbags
 
-    def obtenerFrenosAbs(self) -> bool:
-        return self.__frenosAbs
+    def obtener_frenos_abs(self) -> bool:
+        return self.__frenos_abs
 
-    def obtenerCaballosFuerza(self) -> int:
-        return self.__caballosFuerza
+    def obtener_caballos_fuerza(self) -> int:
+        return self.__caballos_fuerza
 
-
-    # Ejercicio 5 - implementacion __str__
-    def __str__(self):
+    # >> Ejercicio 5 - __str__ <<
+    def __str__(self) -> str:
         return (
-            f"Auto #{self.obtener_numero_id()} | Marca: {self.obtener_marca()} | Modelo: {self.obtener_modelo()} | "
-            f"Año: {self.obtener_anio()} | Sucursal ID: {self.obtener_sucursal_id()} | Estado ID: {self.obtener_estado_id()} | "
-            f"Airbags: {self.__airbags} | Frenos ABS: {'Sí' if self.__frenosAbs else 'No'} | "
-            f"Caballos de fuerza: {self.__caballosFuerza}"
+            f"Auto("
+            f"numero_id={self.obtener_numero_id()}, "
+            f"marca='{self.obtener_marca()}', "
+            f"modelo='{self.obtener_modelo()}', "
+            f"anio='{self.obtener_anio()}', "
+            f"sucursal_id={self.obtener_sucursal_id()}, "
+            f"estado_id={self.obtener_estado_id()}, "
+            f"airbags={self.__airbags}, "
+            f"frenos_abs={self.__frenos_abs}, "
+            f"caballos_fuerza={self.__caballos_fuerza}"
+            f")"
         )

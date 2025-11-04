@@ -1,14 +1,20 @@
-# Ejercicio 4 - clase Venta
+# =========================================
+# Ejercicio 4 - Clase Venta
+# =========================================
+
 
 class Venta:
-    def __init__(self, numero_id: int, fecha: str, cliente_id: int, vehiculo_id: int, monto: int):
+    # << Constructores >>
+    def __init__(
+        self, numero_id: int, fecha: str, cliente_id: int, vehiculo_id: int, monto: int
+    ):
         self.__numero_id = numero_id
         self.__fecha = fecha
         self.__cliente_id = cliente_id
         self.__vehiculo_id = vehiculo_id
         self.__monto = monto
 
-    # Comandos
+    # << Comandos >>
     def establecer_numero_id(self, numero_id: int):
         self.__numero_id = numero_id
 
@@ -24,7 +30,7 @@ class Venta:
     def establecer_monto(self, monto: int):
         self.__monto = monto
 
-    # Consultas
+    # << Consultas >>
     def obtener_numero_id(self) -> int:
         return self.__numero_id
 
@@ -40,16 +46,20 @@ class Venta:
     def obtener_monto(self) -> int:
         return self.__monto
 
-
-    # Ejercicio 5 - implementacion __str__ y __eq__
+    # >> Ejercicio 5 - __eq__ <<
     def __eq__(self, other):
+        # Comparación por numero_id
         if isinstance(other, Venta):
             return self.__numero_id == other.__numero_id
         return False
 
+    # >> Ejercicio 5 - __str__ <<
     def __str__(self):
+        # Representación completa de la venta
         return (
-            f"Venta #{self.__numero_id} | Fecha: {self.__fecha} | "
-            f"Cliente ID: {self.__cliente_id} | Vehículo ID: {self.__vehiculo_id} | "
-            f"Monto: ${self.__monto}"
+            f"Venta("
+            f"numero_id={self.__numero_id}, fecha='{self.__fecha}', "
+            f"cliente_id={self.__cliente_id}, vehiculo_id={self.__vehiculo_id}, "
+            f"monto={self.__monto}"
+            f")"
         )

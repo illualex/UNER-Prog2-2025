@@ -51,6 +51,13 @@ class Vehiculo(abc.ABC):
     def obtener_estado_id(self):
         return self.__estado_id
 
+    # >> Ejercicio 5 - __eq__ <<
+    def __eq__(self, other):
+        if isinstance(other, Vehiculo):
+            return self.__numero_id == other.__numero_id
+        return False
+
+    # >> Ejercicio 5 - __str__ <<
     @abc.abstractmethod
     def __str__(self):
         pass

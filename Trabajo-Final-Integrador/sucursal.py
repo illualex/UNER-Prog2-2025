@@ -1,7 +1,8 @@
 # =========================================
 # Ejercicio 1 - generar la clase sucursal.py
 # =========================================
-
+from typing import List
+from venta import Venta
 
 class Sucursal:
     # Constructor
@@ -33,3 +34,17 @@ class Sucursal:
 
     def obtenerVentas(self) -> List[Venta]:
         return self.__ventas
+    
+
+    # Ejercicio 5 - implementacion __str__ y __eq__
+    def __eq__(self, other):
+        if isinstance(other, Sucursal):
+            return self.__numeroId == other.__numeroId
+        return False
+
+    def __str__(self):
+        texto_ventas = "\n    ".join(str(venta) for venta in self.__ventas)
+        return (
+            f"Sucursal #{self.__numeroId} | Dirección: {self.__direccion}\n"
+            f"  Ventas:\n    {texto_ventas if texto_ventas else 'Sin ventas registradas'}"
+        )

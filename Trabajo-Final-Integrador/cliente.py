@@ -36,3 +36,17 @@ class Cliente:
 
     def obtenerEmail(self) -> str:
         return self.__email
+
+
+    # Ejercicio 5 - implementacion __str__ y __eq__
+    def __eq__(self, other):
+        if isinstance(other, Cliente):
+            return self.__numeroId == other.__numeroId
+        return False
+
+    def __str__(self):
+        return (
+            f"Cliente #{self.__numeroId} | "
+            f"Nombre: {self.__nombres} {self.__apellidos} | "
+            f"Email: {self.__email}"
+        )
